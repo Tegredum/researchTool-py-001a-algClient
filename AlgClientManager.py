@@ -9,7 +9,7 @@ from typing import Optional
 class AlgClientManager:
 	"""A TCP client that mirrors the MATLAB `AlgClientManager` behavior.
 
-	- Connects to localhost on the given port
+	- Connects to a given host (default '127.0.0.1') and port
 	- Sends JSON messages prefixed by a 4-byte big-endian length
 	- Receives responses with the same framing and decodes JSON
 	- On server error responses (status != 'ok'), stores `error_msg` and returns None

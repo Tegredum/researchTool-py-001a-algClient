@@ -1,5 +1,5 @@
 # encoding: utf-8
-# author: GitHub Copilot Agent (GPT-5 mini)
+# author: GitHub Copilot Agent (GPT-5 mini), Tegredum
 # python version: 3.10.16
 import time
 import json
@@ -10,7 +10,12 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))	
 from AlgClientManager import AlgClientManager
 
 def main():
-	with AlgClientManager(12345) as client:
+	args: dict = {
+		'port': 12345,
+		'host': '127.0.0.1'
+	}
+
+	with AlgClientManager(args['port'], host=args['host']) as client:
 		for idx in range(1, 4):
 			request = {
 				'iter': idx,
